@@ -2,15 +2,19 @@ MYPATH=~/.valgrinDock/
 CONTAINER="server"
 USER_PATH=$(pwd)
 
+
 # Create Makefile
 sh $MYPATH/autoMakefile.sh
 mv Makefile $MYPATH/executables
 
+
 # Copy files in current folder
 cp -r . $MYPATH/executables
 
+
 # Change directory to current folder
 cd $MYPATH
+
 
 # Start container
 docker ps -q --filter "name=$CONTAINER" > temp.txt
@@ -29,8 +33,12 @@ if ! [ ${#CONTAINER_SEARCH} -gt $LENGTH ]; then
 	fi
 fi 
 
+
+# Copy files to container
 docker cp $MYPATH/executables/. $CONTAINER:/app/executables
+rm -rf $MYPATH/executables/
+mkdir $MYPATH/executables/
 
+# Compile and debug :)
 read -p "Press enter to compile"
-
 curl  http://localhost:8050/compile
