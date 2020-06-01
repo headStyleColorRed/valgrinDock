@@ -6,7 +6,7 @@ NAME	= 	OUTPUT
 
 FLAGS	= -g
 
-GCC = GCC
+GCC = gcc
 
 all:	$(NAME)
 
