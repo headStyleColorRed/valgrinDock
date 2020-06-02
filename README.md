@@ -35,7 +35,6 @@ ValgrinDock uses a number of open source projects to work properly:
 * [Valgrind] - Suite of tools for debugging and profiling
 
 ### Todos
- - It needs to process header files
  - Must allow more debuggin configuration
  - Allow the user to use his makefile instead of creating one
 

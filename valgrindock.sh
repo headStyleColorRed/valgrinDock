@@ -4,6 +4,7 @@ USER_PATH=$(pwd)
 
 
 # Create Makefile
+mkdir $MYPATH/executables/
 sh $MYPATH/autoMakefile.sh
 mv Makefile $MYPATH/executables
 
@@ -37,7 +38,6 @@ fi
 # Copy files to container
 docker cp $MYPATH/executables/. $CONTAINER:/app/executables
 rm -rf $MYPATH/executables/
-mkdir $MYPATH/executables/
 
 # Compile and debug :)
 read -p "Press enter to compile"
